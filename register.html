@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | My E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form id="register-form">
+      <h2>Register</h2>
+
+      <div class="input-field">
+        <input type="text" id="name" required>
+        <label for="name">Enter your name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="email" id="email" required>
+        <label for="email">Enter your email</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" id="password" required>
+        <label for="password">Enter your password</label>
+      </div>
+
+      <button type="submit">Sign Up</button>
+
+      <div id="message" style="color: red; margin-top: 10px;"></div>
+
+      <div class="register">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <!-- Link external JS -->
+  <script type="module" src="register.js"></script>
+</body>
+</html>
