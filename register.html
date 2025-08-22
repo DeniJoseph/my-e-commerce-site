@@ -7,36 +7,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrapper">
+  <div class="register-container">
+  <!-- Left: Logo -->
+  <div class="brand-section">
+    <img src="brand.png" alt="Brand Logo">
+  </div>
+
+  <!-- Right: Form -->
+  <div class="form-section">
     <form id="register-form">
-      <h2>Register</h2>
+      <h2>Create Account</h2>
 
       <div class="input-field">
-        <input type="text" id="name" required>
-        <label for="name">Enter your name</label>
+        <input type="text" id="name" placeholder=" " required>
+        <label for="name">Full Name</label>
+        <div class="validation-message" id="name-message"></div>
       </div>
 
       <div class="input-field">
-        <input type="email" id="email" required>
-        <label for="email">Enter your email</label>
+        <input type="email" id="email" placeholder=" " required>
+        <label for="email">Email Address</label>
+        <div class="validation-message" id="email-message"></div>
       </div>
 
       <div class="input-field">
-        <input type="password" id="password" required>
-        <label for="password">Enter your password</label>
+        <input type="password" id="password" placeholder=" " required>
+        <label for="password">Password</label>
+        <div class="validation-message" id="password-message"></div>
       </div>
 
-      <button type="submit">Sign Up</button>
+      <div class="input-field">
+        <input type="password" id="confirm-password" placeholder=" " required>
+        <label for="confirm-password">Confirm Password</label>
+        <div class="validation-message" id="confirm-password-message"></div>
+      </div>
 
-      <div id="message" style="color: red; margin-top: 10px;"></div>
+      <div class="terms-checkbox">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <div class="loader" id="loader"></div>
+        <span id="btn-text">Create Account</span>
+      </button>
+
+      <div id="message"></div>
 
       <div class="register">
-        <p>Already have an account? <a href="login.html">Login</a></p>
+        <p>Already have an account? <a href="login.html" id="login-link">Sign In</a></p>
       </div>
     </form>
   </div>
-
-  <!-- Link external JS -->
+</div>
   <script type="module" src="register.js"></script>
 </body>
 </html>
