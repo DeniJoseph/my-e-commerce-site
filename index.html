@@ -1,65 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register | My E-commerce</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - Premium Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <div class="register-container">
-  <!-- Left: Logo -->
-  <div class="brand-section">
-    <img src="brand.png" alt="Brand Logo">
-  </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>LUXE</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Collections</a></li>
+                <li><a href="#" class="nav-link">New Arrivals</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="icon">🔍</span>
+                <span class="icon">🛍️</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Right: Form -->
-  <div class="form-section">
-    <form id="register-form">
-      <h2>Create Account</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-subtitle">Spring Collection 2025</h2>
+            <h1 class="hero-title">Effortless<br>Elegance</h1>
+            <p class="hero-description">Discover our curated selection of premium pieces that define contemporary luxury.</p>
+            <button class="cta-button">Shop Collection</button>
+        </div>
+        <div class="hero-image">
+            <div class="image-placeholder">
+                <!-- Placeholder for hero image -->
+                <div class="gradient-overlay"></div>
+            </div>
+        </div>
+    </section>
 
-      <div class="input-field">
-        <input type="text" id="name" placeholder=" " required>
-        <label for="name">Full Name</label>
-        <div class="validation-message" id="name-message"></div>
-      </div>
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid" id="categoryGrid">
+                <!-- Categories will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
 
-      <div class="input-field">
-        <input type="email" id="email" placeholder=" " required>
-        <label for="email">Email Address</label>
-        <div class="validation-message" id="email-message"></div>
-      </div>
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">This Week's Favorites</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
 
-      <div class="input-field">
-        <input type="password" id="password" placeholder=" " required>
-        <label for="password">Password</label>
-        <div class="validation-message" id="password-message"></div>
-      </div>
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Be the first to know about new collections and exclusive offers.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" class="email-input" required>
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-      <div class="input-field">
-        <input type="password" id="confirm-password" placeholder=" " required>
-        <label for="confirm-password">Confirm Password</label>
-        <div class="validation-message" id="confirm-password-message"></div>
-      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE</h3>
+                    <p>Premium fashion for the modern lifestyle.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LUXE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-      <div class="terms-checkbox">
-        <input type="checkbox" id="terms" required>
-        <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
-      </div>
-
-      <button type="submit" class="submit-btn" id="submit-btn">
-        <div class="loader" id="loader"></div>
-        <span id="btn-text">Create Account</span>
-      </button>
-
-      <div id="message"></div>
-
-      <div class="register">
-        <p>Already have an account? <a href="login.html" id="login-link">Sign In</a></p>
-      </div>
-    </form>
-  </div>
-</div>
-  <script type="module" src="register.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
